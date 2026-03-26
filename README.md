@@ -25,6 +25,14 @@ currently:
   - Building production-grade APIs with Spring Boot
   - Crafting responsive UIs with Angular
   - Orchestrating containers with Kubernetes
+ai_tools:
+  - Claude Code & ChatGPT for AI-assisted development
+  - GitHub Copilot for intelligent code completion
+  - Gemini for research & problem solving
+ides:
+  - IntelliJ IDEA (primary for Java/Spring)
+  - VS Code (Angular/TypeScript)
+  - Eclipse (legacy projects)
 ```
 
 ---
@@ -33,11 +41,12 @@ currently:
 
 <table align="center">
 <tr>
-  <td align="center" width="140"><b>Backend</b></td>
-  <td align="center" width="140"><b>Frontend</b></td>
-  <td align="center" width="140"><b>Cloud & DevOps</b></td>
-  <td align="center" width="140"><b>Databases</b></td>
-  <td align="center" width="140"><b>Tools</b></td>
+  <td align="center" width="130"><b>Backend</b></td>
+  <td align="center" width="130"><b>Frontend</b></td>
+  <td align="center" width="130"><b>Cloud & DevOps</b></td>
+  <td align="center" width="130"><b>Databases</b></td>
+  <td align="center" width="130"><b>IDEs & Tools</b></td>
+  <td align="center" width="130"><b>AI Tools</b></td>
 </tr>
 <tr>
   <td align="center">
@@ -61,9 +70,14 @@ currently:
     <img src="https://skillicons.dev/icons?i=mongodb" width="40" alt="MongoDB"/><br><sub>MongoDB</sub>
   </td>
   <td align="center">
-    <img src="https://skillicons.dev/icons?i=git" width="40" alt="Git"/><br><sub>Git</sub><br>
-    <img src="https://skillicons.dev/icons?i=linux" width="40" alt="Linux"/><br><sub>Linux</sub><br>
-    <img src="https://skillicons.dev/icons?i=terraform" width="40" alt="Terraform"/><br><sub>Terraform</sub>
+    <img src="https://skillicons.dev/icons?i=idea" width="40" alt="IntelliJ IDEA"/><br><sub>IntelliJ IDEA</sub><br>
+    <img src="https://skillicons.dev/icons?i=eclipse" width="40" alt="Eclipse"/><br><sub>Eclipse</sub><br>
+    <img src="https://skillicons.dev/icons?i=vscode" width="40" alt="VS Code"/><br><sub>VS Code</sub>
+  </td>
+  <td align="center">
+    <img src="https://img.shields.io/badge/Claude-D97757?style=flat&logo=anthropic&logoColor=white" height="28" alt="Claude"/><br><sub>Claude Code</sub><br>
+    <img src="https://img.shields.io/badge/ChatGPT-412991?style=flat&logo=openai&logoColor=white" height="28" alt="ChatGPT"/><br><sub>ChatGPT</sub><br>
+    <img src="https://img.shields.io/badge/Gemini-8E75B2?style=flat&logo=googlegemini&logoColor=white" height="28" alt="Gemini"/><br><sub>Gemini</sub>
   </td>
 </tr>
 </table>
@@ -85,6 +99,29 @@ currently:
   <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white"/>
   <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white"/>
   <img src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white"/>
+</p>
+
+### IDEs & Development
+
+<p align="center">
+  <img src="https://img.shields.io/badge/IntelliJ_IDEA-000000?style=for-the-badge&logo=intellijidea&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=eclipse&logoColor=white"/>
+  <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white"/>
+</p>
+
+### AI-Powered Development
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Claude_Code-D97757?style=for-the-badge&logo=anthropic&logoColor=white"/>
+  <img src="https://img.shields.io/badge/ChatGPT-412991?style=for-the-badge&logo=openai&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white"/>
+  <img src="https://img.shields.io/badge/GitHub_Copilot-000000?style=for-the-badge&logo=githubcopilot&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Cursor_AI-000000?style=for-the-badge&logo=cursor&logoColor=white"/>
 </p>
 
 ---

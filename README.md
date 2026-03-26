@@ -74,23 +74,27 @@ ides:
 ## GitHub Trophies
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=x-cristhian-villegas&theme=onestar&no-frame=false&no-bg=false&column=7&margin-w=15&margin-h=15" alt="Trophies"/>
+  <img src="https://github-profile-trophy.vercel.app/?username=x-cristhian-villegas&theme=tokyonight&column=4&margin-w=15&margin-h=15" alt="Trophies"/>
 </p>
 
 ---
 
 ## Architecture & Principles
 
-```text
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│   Angular UI    │ ─── │  Spring Boot    │ ─── │   PostgreSQL    │
-│   + Tailwind    │     │  REST / gRPC    │     │   + Redis       │
-└─────────────────┘     └─────────────────┘     └─────────────────┘
-         │                    │                    │
-    ┌────┴────────────────────┴────────────────────┴────┐
-    │   Docker / Kubernetes / AWS Cloud                 │
-    └───────────────────────────────────────────────────┘
-```
+<div align="center">
+
+| Frontend | | Backend | | Data |
+|:--------:|:--:|:-------:|:--:|:----:|
+| **Angular UI** | **-->** | **Spring Boot** | **-->** | **PostgreSQL** |
+| Tailwind CSS | | REST / gRPC | | Redis |
+| | | | | MongoDB |
+
+| Infrastructure |
+|:--------------:|
+| **Docker / Kubernetes / AWS Cloud** |
+| CI/CD with GitHub Actions |
+
+</div>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Clean_Architecture-0D1117?style=flat-square&logo=buffer&logoColor=A0E534"/>

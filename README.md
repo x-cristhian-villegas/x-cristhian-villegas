@@ -74,7 +74,7 @@ ides:
 ## GitHub Trophies
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=x-cristhian-villegas&theme=darkhub&no-frame=true&no-bg=true&column=7&margin-w=10" alt="Trophies"/>
+  <img src="https://github-profile-trophy.vercel.app/?username=x-cristhian-villegas&theme=onestar&no-frame=false&no-bg=false&column=7&margin-w=15&margin-h=15" alt="Trophies"/>
 </p>
 
 ---

@@ -1,6 +1,6 @@
 <!-- Header animado -->
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:A0E534,100:0D1117&height=220&section=header&text=Cristhian%20Villegas&fontSize=50&fontColor=FFFFFF&fontAlignY=35&desc=Software%20Engineer%20%7C%20Fullstack%20Developer%20%7C%20Cloud%20Architect&descSize=18&descColor=A0E534&descAlignY=55&animation=fadeIn" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,30:1A3A5C,60:2E86DE,100:0D1117&height=220&section=header&text=Cristhian%20Villegas&fontSize=50&fontColor=FFFFFF&fontAlignY=35&desc=Software%20Engineer%20%7C%20Fullstack%20Developer%20%7C%20Cloud%20Architect&descSize=18&descColor=58B4F7&descAlignY=55&animation=fadeIn" width="100%"/>
 </div>
 
 <!-- Typing SVG -->
@@ -201,4 +201,4 @@ ides:
 </p>
 
 <!-- Footer wave -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:A0E534,100:0D1117&height=120&section=footer" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,30:1A3A5C,60:2E86DE,100:0D1117&height=120&section=footer" width="100%"/>

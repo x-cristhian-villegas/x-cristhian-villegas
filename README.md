@@ -39,108 +39,17 @@ ides:
 
 ## Tech Stack
 
-<!-- Languages & Frameworks -->
-<h3 align="center">Languages & Frameworks</h3>
-<p align="center">
-  <a href="#"><img src="https://skillicons.dev/icons?i=java,spring,python,angular,ts,tailwind&theme=dark" alt="Languages & Frameworks"/></a>
-</p>
-
-<!-- Cloud, DevOps & Infra -->
-<h3 align="center">Cloud, DevOps & Infrastructure</h3>
-<p align="center">
-  <a href="#"><img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,terraform,githubactions,grafana&theme=dark" alt="Cloud & DevOps"/></a>
-</p>
-
-<!-- Databases -->
-<h3 align="center">Databases</h3>
-<p align="center">
-  <a href="#"><img src="https://skillicons.dev/icons?i=postgres,redis,mongodb&theme=dark" alt="Databases"/></a>
-</p>
-
-<!-- IDEs & Dev Tools -->
-<h3 align="center">IDEs & Dev Tools</h3>
-<table align="center">
-<tr>
-  <td align="center" width="96">
-    <a href="#"><img src="https://skillicons.dev/icons?i=idea" width="48" alt="IntelliJ"/></a><br><sub><b>IntelliJ IDEA</b></sub>
-  </td>
-  <td align="center" width="96">
-    <a href="#"><img src="https://skillicons.dev/icons?i=eclipse" width="48" alt="Eclipse"/></a><br><sub><b>Eclipse</b></sub>
-  </td>
-  <td align="center" width="96">
-    <a href="#"><img src="https://skillicons.dev/icons?i=vscode" width="48" alt="VS Code"/></a><br><sub><b>VS Code</b></sub>
-  </td>
-  <td align="center" width="96">
-    <a href="#"><img src="https://skillicons.dev/icons?i=postman" width="48" alt="Postman"/></a><br><sub><b>Postman</b></sub>
-  </td>
-  <td align="center" width="96">
-    <a href="#"><img src="https://skillicons.dev/icons?i=git" width="48" alt="Git"/></a><br><sub><b>Git</b></sub>
-  </td>
-  <td align="center" width="96">
-    <a href="#"><img src="https://skillicons.dev/icons?i=maven" width="48" alt="Maven"/></a><br><sub><b>Maven</b></sub>
-  </td>
-  <td align="center" width="96">
-    <a href="#"><img src="https://skillicons.dev/icons?i=gradle" width="48" alt="Gradle"/></a><br><sub><b>Gradle</b></sub>
-  </td>
-</tr>
-<tr>
-  <td align="center" width="96">
-    <img src="https://img.shields.io/badge/-0078D4?style=flat-square&logo=windowsterminal&logoColor=white" height="48" alt="MobaXterm"/><br><sub><b>MobaXterm</b></sub>
-  </td>
-  <td align="center" width="96">
-    <img src="https://img.shields.io/badge/-382923?style=flat-square&logo=dbeaver&logoColor=white" height="48" alt="DBeaver"/><br><sub><b>DBeaver</b></sub>
-  </td>
-  <td align="center" width="96">
-    <img src="https://img.shields.io/badge/-336791?style=flat-square&logo=postgresql&logoColor=white" height="48" alt="pgAdmin"/><br><sub><b>pgAdmin</b></sub>
-  </td>
-  <td align="center" width="96">
-    <img src="https://img.shields.io/badge/-FF6F00?style=flat-square&logo=python&logoColor=white" height="48" alt="Antigravity"/><br><sub><b>Antigravity</b></sub>
-  </td>
-  <td align="center" width="96" colspan="3">
-  </td>
-</tr>
-</table>
-
-<!-- Operating Systems -->
-<h3 align="center">Operating Systems</h3>
-<p align="center">
-  <a href="#"><img src="https://skillicons.dev/icons?i=ubuntu,debian,fedora,linux&theme=dark" alt="Operating Systems"/></a>
-</p>
-
-<!-- AI-Powered Development -->
-<h3 align="center">AI-Powered Development</h3>
-<table align="center">
-<tr>
-  <td align="center" width="110">
-    <img src="https://img.shields.io/badge/-D97757?style=flat-square&logo=anthropic&logoColor=white" height="48" alt="Claude"/><br><sub><b>Claude Code</b></sub>
-  </td>
-  <td align="center" width="110">
-    <img src="https://img.shields.io/badge/-412991?style=flat-square&logo=openai&logoColor=white" height="48" alt="ChatGPT"/><br><sub><b>ChatGPT</b></sub>
-  </td>
-  <td align="center" width="110">
-    <img src="https://img.shields.io/badge/-8E75B2?style=flat-square&logo=googlegemini&logoColor=white" height="48" alt="Gemini"/><br><sub><b>Gemini</b></sub>
-  </td>
-  <td align="center" width="110">
-    <img src="https://img.shields.io/badge/-000000?style=flat-square&logo=githubcopilot&logoColor=white" height="48" alt="Copilot"/><br><sub><b>GitHub Copilot</b></sub>
-  </td>
-  <td align="center" width="110">
-    <img src="https://img.shields.io/badge/-000000?style=flat-square&logo=cursor&logoColor=white" height="48" alt="Cursor"/><br><sub><b>Cursor AI</b></sub>
-  </td>
-</tr>
-</table>
-
-<!-- Creative Suite -->
-<h3 align="center">Creative Suite</h3>
-<table align="center">
-<tr>
-  <td align="center" width="110">
-    <img src="https://img.shields.io/badge/-9999FF?style=flat-square&logo=adobepremierepro&logoColor=white" height="48" alt="Premiere Pro"/><br><sub><b>Premiere Pro</b></sub>
-  </td>
-  <td align="center" width="110">
-    <img src="https://img.shields.io/badge/-FF9A00?style=flat-square&logo=adobeillustrator&logoColor=white" height="48" alt="Illustrator"/><br><sub><b>Illustrator</b></sub>
-  </td>
-</tr>
-</table>
+| Category | Technologies |
+|:--------:|:------------:|
+| **Languages & Frameworks** | <img src="https://skillicons.dev/icons?i=java,spring,python,angular,ts,tailwind&theme=dark" alt="Languages"/> |
+| **Cloud, DevOps & Infra** | <img src="https://skillicons.dev/icons?i=aws,docker,kubernetes,terraform,githubactions,grafana&theme=dark" alt="Cloud"/> |
+| **Databases** | <img src="https://skillicons.dev/icons?i=postgres,redis,mongodb&theme=dark" alt="DBs"/> |
+| **IDEs & Editors** | <img src="https://skillicons.dev/icons?i=idea,eclipse,vscode&theme=dark" alt="IDEs"/> |
+| **Dev Tools** | <img src="https://skillicons.dev/icons?i=postman,git,maven,gradle&theme=dark" alt="Tools"/> |
+| **DB & SSH Clients** | <img src="https://img.shields.io/badge/DBeaver-382923?style=for-the-badge&logo=dbeaver&logoColor=white"/> <img src="https://img.shields.io/badge/pgAdmin-336791?style=for-the-badge&logo=postgresql&logoColor=white"/> <img src="https://img.shields.io/badge/MobaXterm-0078D4?style=for-the-badge&logo=windowsterminal&logoColor=white"/> <img src="https://img.shields.io/badge/Antigravity-FF6F00?style=for-the-badge&logo=python&logoColor=white"/> |
+| **Operating Systems** | <img src="https://skillicons.dev/icons?i=ubuntu,debian,fedora,linux&theme=dark" alt="OS"/> |
+| **AI-Powered Dev** | <img src="https://img.shields.io/badge/Claude_Code-D97757?style=for-the-badge&logo=anthropic&logoColor=white"/> <img src="https://img.shields.io/badge/ChatGPT-412991?style=for-the-badge&logo=openai&logoColor=white"/> <img src="https://img.shields.io/badge/Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white"/> <img src="https://img.shields.io/badge/GitHub_Copilot-000000?style=for-the-badge&logo=githubcopilot&logoColor=white"/> <img src="https://img.shields.io/badge/Cursor_AI-000000?style=for-the-badge&logo=cursor&logoColor=white"/> |
+| **Creative Suite** | <img src="https://img.shields.io/badge/Premiere_Pro-9999FF?style=for-the-badge&logo=adobepremierepro&logoColor=white"/> <img src="https://img.shields.io/badge/Illustrator-FF9A00?style=for-the-badge&logo=adobeillustrator&logoColor=white"/> |
 
 ---
 

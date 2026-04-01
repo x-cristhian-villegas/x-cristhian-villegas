@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(iconv -f UTF-16LE -t UTF-8 D:/x-cristhian-villegas/README.md)",
+      "Bash(node:*)",
+      "Bash(xxd README.md)",
+      "Bash(npx @angular/cli@18 new portfolio --style=scss --routing --ssr=false --skip-tests --skip-git --directory=portfolio)",
+      "Bash(mkdir -p src/styles)",
+      "Bash(mkdir -p src/app/layout/navbar)",
+      "Bash(mkdir -p src/app/layout/footer)",
+      "Bash(mkdir -p src/app/features/hero)",
+      "Bash(mkdir -p src/app/features/about)",
+      "Bash(npx ng:*)",
+      "Bash(curl -s http://localhost:4200)",
+      "Bash(curl:*)"
+    ]
+  }
+}

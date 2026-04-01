@@ -1,1 +1,77 @@
+name: Build, Publish & Deploy
 
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'portfolio/**'
+      - 'docker-compose.yml'
+      - '.github/workflows/publish.yml'
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_PREFIX: ghcr.io/${{ github.repository }}
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build & push portfolio image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./portfolio
+          push: true
+          tags: |
+            ${{ env.IMAGE_PREFIX }}/portfolio:latest
+            ${{ env.IMAGE_PREFIX }}/portfolio:${{ github.sha }}
+
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Copy docker-compose to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: docker-compose.yml
+          target: ~/x-cristhian-villegas
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ~/x-cristhian-villegas
+
+            # Set env vars for compose
+            export GITHUB_REPOSITORY=${{ github.repository }}
+            export APP_PORT=${{ secrets.APP_PORT }}
+
+            # Pull latest images and restart
+            docker compose pull
+            docker compose up -d --remove-orphans
+
+            # Cleanup old images
+            docker image prune -f

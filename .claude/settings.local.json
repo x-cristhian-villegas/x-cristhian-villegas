@@ -12,7 +12,9 @@
       "Bash(mkdir -p src/app/features/about)",
       "Bash(npx ng:*)",
       "Bash(curl -s http://localhost:4200)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(rm package-lock.json)",
+      "Bash(npm install:*)"
     ]
   }
 }

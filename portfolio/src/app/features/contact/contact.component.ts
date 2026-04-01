@@ -21,7 +21,7 @@ export class ContactComponent {
   readonly socialLinks: SocialLink[] = [
     {
       name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/tu-perfil/',
+      url: 'https://www.linkedin.com/in/x-cristhian-villegas/',
       color: '#0A66C2',
       icon: 'in',
       hint: 'Let\'s connect',
@@ -35,17 +35,17 @@ export class ContactComponent {
     },
     {
       name: 'X / Twitter',
-      url: 'https://twitter.com/tu-usuario',
+      url: 'https://x.com/ChrisVillegas92',
       color: '#f0f0f0',
       icon: 'X',
       hint: 'Follow me',
     },
     {
       name: 'Email',
-      url: 'mailto:tu-email@ejemplo.com',
+      url: 'mailto:x.cristhian.villegas@gmail.com',
       color: '#EA4335',
       icon: '@',
-      hint: 'tu-email&#64;ejemplo.com',
+      hint: 'x.cristhian.villegas@gmail.com',
     },
   ];
 

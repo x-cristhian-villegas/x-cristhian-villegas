@@ -30,10 +30,14 @@
 
   &__box {
     @include glass-card;
-    padding: $spacing-8 $spacing-6;
+    padding: $spacing-6 $spacing-4;
     display: grid;
     grid-template-columns: 1fr;
     gap: $spacing-8;
+
+    @include respond-to('sm') {
+      padding: $spacing-8 $spacing-6;
+    }
 
     @include respond-to('md') {
       padding: $spacing-10 $spacing-8;
@@ -94,10 +98,15 @@
 
     &-link {
       font-family: $font-family-mono;
-      font-size: $font-size-base;
+      font-size: $font-size-sm;
       color: var(--accent-green);
       transition: $transition-fast;
+      word-break: break-all;
       @include focus-ring;
+
+      @include respond-to('sm') {
+        font-size: $font-size-base;
+      }
 
       &:hover {
         color: var(--accent-green-hover);
@@ -117,7 +126,12 @@
     align-items: center;
     justify-content: space-between;
     gap: $spacing-3;
-    padding: $spacing-4 $spacing-5;
+    padding: $spacing-3 $spacing-3;
+    min-width: 0;
+
+    @include respond-to('sm') {
+      padding: $spacing-4 $spacing-5;
+    }
     background: var(--glass-bg);
     border: 1px solid var(--border-color);
     border-radius: $radius-lg;
@@ -139,43 +153,66 @@
     &-left {
       display: flex;
       align-items: center;
-      gap: $spacing-4;
+      gap: $spacing-3;
+      min-width: 0;
+
+      @include respond-to('sm') {
+        gap: $spacing-4;
+      }
     }
 
     &-icon {
-      width: 40px;
-      height: 40px;
+      width: 32px;
+      height: 32px;
       @include flex-center;
       font-family: $font-family-mono;
-      font-size: $font-size-sm;
+      font-size: $font-size-xs;
       font-weight: $font-weight-bold;
       background: var(--glass-bg);
       border: 1px solid var(--border-color);
       border-radius: $radius-base;
       flex-shrink: 0;
+
+      @include respond-to('sm') {
+        width: 40px;
+        height: 40px;
+        font-size: $font-size-sm;
+      }
     }
 
     &-text {
       @include flex-column;
       gap: 2px;
+      min-width: 0;
     }
 
     &-name {
       font-size: $font-size-sm;
       font-weight: $font-weight-semibold;
       color: var(--text-primary);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     &-hint {
       font-size: $font-size-xs;
       color: var(--text-muted);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     &-arrow {
+      display: none;
       color: var(--text-muted);
       opacity: 0.4;
       transition: $transition-base;
       flex-shrink: 0;
+
+      @include respond-to('sm') {
+        display: block;
+      }
     }
   }
 }

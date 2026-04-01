@@ -8,7 +8,11 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 60px $spacing-4 120px;
+  padding: 100px $spacing-4 120px;
+
+  @include respond-to('md') {
+    padding-top: 60px;
+  }
 
   &::after {
     content: '';

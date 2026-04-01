@@ -1,15 +1,15 @@
 <header class="header" [class.header--scrolled]="isScrolled()">
   <nav class="header__nav">
-    <a class="header__logo" (click)="scrollTo('#hero')">
+    <a class="header__logo" (click)="goHome()" tabindex="0">
       <span class="header__logo-symbol">&lt;</span>CV<span class="header__logo-symbol">/&gt;</span>
     </a>
 
     <ul class="header__menu">
-      @for (link of navLinks; track link.href) {
+      @for (link of navLinks; track link.label) {
         <li>
           <a
             class="header__menu-link"
-            (click)="scrollTo(link.href)"
+            (click)="navigate(link)"
             tabindex="0">
             <span class="header__menu-number">0{{ $index + 1 }}.</span>
             {{ link.label }}
@@ -26,7 +26,7 @@
         {{ themeIcon() }}
       </button>
 
-      <a class="header__cta" href="#contact" (click)="$event.preventDefault(); scrollTo('#contact')">
+      <a class="header__cta" (click)="navigate({ label: 'Contact', href: '#contact' })" tabindex="0">
         Contact
       </a>
 
@@ -46,16 +46,16 @@
     <div class="header__mobile-overlay" (click)="closeMenu()"></div>
     <aside class="header__mobile-panel">
       <div class="header__mobile-links">
-        @for (link of navLinks; track link.href) {
+        @for (link of navLinks; track link.label) {
           <a
             class="header__mobile-link"
-            (click)="scrollTo(link.href)">
+            (click)="navigate(link)">
             <span class="header__mobile-number">0{{ $index + 1 }}.</span>
             {{ link.label }}
           </a>
         }
       </div>
-      <a class="header__mobile-cta" href="#contact" (click)="$event.preventDefault(); scrollTo('#contact')">
+      <a class="header__mobile-cta" (click)="navigate({ label: 'Contact', href: '#contact' })">
         Contact
       </a>
     </aside>

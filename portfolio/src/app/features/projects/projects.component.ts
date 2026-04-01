@@ -41,6 +41,17 @@ export class ProjectsComponent {
       color: 'var(--accent-cyan)',
       featured: true,
     },
+    {
+      name: 'Creaciones Angie',
+      tagline: 'Artisan e-commerce with online quotation system',
+      description:
+        'Landing page for a Mexican artisanal business specializing in handmade candles, resin art, and creative stationery. Features an integrated quotation system, contact form, and responsive design.',
+      tags: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap Icons'],
+      liveUrl: 'https://creaciones-angy.com',
+      icon: 'CA',
+      color: 'var(--accent-orange)',
+      featured: false,
+    },
   ];
 
   readonly filtered = computed(() => {

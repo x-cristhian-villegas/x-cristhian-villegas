@@ -23,7 +23,7 @@ import { AdBannerComponent } from '../../shared/ad-banner/ad-banner.component';
     <app-about />
     <app-tech-stack />
     <app-architecture />
-    <app-ad-banner slot="1234567890" placement="home-before-contact" />
+    <app-ad-banner slot="6125069611" placement="home-before-contact" />
     <app-contact />
   `,
 })

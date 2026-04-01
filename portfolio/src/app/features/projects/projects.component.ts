@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, signal, computed } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ScrollRevealDirective } from '../../shared/animations/scroll.animation';
+import { AdBannerComponent } from '../../shared/ad-banner/ad-banner.component';
 
 interface Project {
   name: string;
@@ -12,12 +13,13 @@ interface Project {
   icon: string;
   color: string;
   featured: boolean;
+  status?: string;
 }
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [RouterLink, ScrollRevealDirective],
+  imports: [RouterLink, ScrollRevealDirective, AdBannerComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
@@ -40,6 +42,7 @@ export class ProjectsComponent {
       icon: '>>',
       color: 'var(--accent-cyan)',
       featured: true,
+      status: 'Collecting feedback',
     },
     {
       name: 'Creaciones Angie',
@@ -51,6 +54,19 @@ export class ProjectsComponent {
       icon: 'CA',
       color: 'var(--accent-orange)',
       featured: true,
+      status: 'v1 Production',
+    },
+    {
+      name: 'BPM Engine AGVB',
+      tagline: 'Lightweight process engine with process-as-code',
+      description:
+        'Custom BPM engine where business processes are defined as annotated Java classes. Features async steps with callback resumption, smart retries (ERROR vs FAILED), declarative I/O mapping, full audit trail, and an Angular dashboard with interactive flow diagrams.',
+      tags: ['Spring Boot', 'Angular', 'PostgreSQL', 'Docker'],
+      liveUrl: 'https://bpm.iamcristhian.dev/dashboard',
+      icon: 'BP',
+      color: 'var(--accent-cyan)',
+      featured: true,
+      status: 'Early stage',
     },
   ];
 

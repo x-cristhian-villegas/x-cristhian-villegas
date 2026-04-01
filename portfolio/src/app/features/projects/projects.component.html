@@ -82,7 +82,12 @@
             </div>
 
             <div class="projects__card-body">
-              <h3 class="projects__card-name">{{ project.name }}</h3>
+              <div class="projects__card-name-row">
+                <h3 class="projects__card-name">{{ project.name }}</h3>
+                @if (project.status) {
+                  <span class="projects__card-status">{{ project.status }}</span>
+                }
+              </div>
               <p class="projects__card-tagline">{{ project.tagline }}</p>
               <p class="projects__card-desc">{{ project.description }}</p>
             </div>
@@ -146,5 +151,7 @@
         <button class="projects__empty-reset" (click)="clearSearch()">Clear search</button>
       </div>
     }
+
+    <app-ad-banner slot="0987654321" placement="projects-after-grid" />
   </div>
 </section>

@@ -4,6 +4,7 @@ import { AboutComponent } from '../about/about.component';
 import { TechStackComponent } from '../tech-stack/tech-stack.component';
 import { ArchitectureComponent } from '../architecture/architecture.component';
 import { ContactComponent } from '../contact/contact.component';
+import { AdBannerComponent } from '../../shared/ad-banner/ad-banner.component';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,7 @@ import { ContactComponent } from '../contact/contact.component';
     AboutComponent,
     TechStackComponent,
     ArchitectureComponent,
+    AdBannerComponent,
     ContactComponent,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -21,6 +23,7 @@ import { ContactComponent } from '../contact/contact.component';
     <app-about />
     <app-tech-stack />
     <app-architecture />
+    <app-ad-banner slot="1234567890" placement="home-before-contact" />
     <app-contact />
   `,
 })

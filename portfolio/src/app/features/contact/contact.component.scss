@@ -1,0 +1,181 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+.contact {
+  @include section-padding;
+  position: relative;
+  overflow: hidden;
+
+  &__glow {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--orb-green) 0%, transparent 70%);
+    pointer-events: none;
+    filter: blur(60px);
+  }
+
+  &__container {
+    @include container;
+    position: relative;
+  }
+
+  &__wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  &__box {
+    @include glass-card;
+    padding: $spacing-8 $spacing-6;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-8;
+
+    @include respond-to('md') {
+      padding: $spacing-10 $spacing-8;
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-10;
+    }
+  }
+
+  // === Left: Info ===
+  &__info {
+    @include flex-column;
+    gap: $spacing-4;
+  }
+
+  &__label {
+    @include section-label;
+
+    &-line {
+      width: 32px;
+      height: 1px;
+      background: var(--accent-green);
+    }
+  }
+
+  &__title {
+    font-size: $font-size-2xl;
+    line-height: $line-height-tight;
+
+    @include respond-to('md') {
+      font-size: $font-size-3xl;
+    }
+
+    &--accent {
+      @include text-gradient;
+    }
+  }
+
+  &__desc {
+    font-size: $font-size-base;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  &__email {
+    margin-top: $spacing-4;
+    padding-top: $spacing-5;
+    border-top: 1px solid var(--border-color);
+
+    &-label {
+      display: block;
+      font-family: $font-family-mono;
+      font-size: $font-size-xs;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: $spacing-2;
+    }
+
+    &-link {
+      font-family: $font-family-mono;
+      font-size: $font-size-base;
+      color: var(--accent-green);
+      transition: $transition-fast;
+      @include focus-ring;
+
+      &:hover {
+        color: var(--accent-green-hover);
+      }
+    }
+  }
+
+  // === Right: Links ===
+  &__links {
+    @include flex-column;
+    gap: $spacing-3;
+    justify-content: center;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-3;
+    padding: $spacing-4 $spacing-5;
+    background: var(--glass-bg);
+    border: 1px solid var(--border-color);
+    border-radius: $radius-lg;
+    transition: $transition-base;
+    @include focus-ring;
+
+    &:hover {
+      background: var(--glass-bg-hover);
+      border-color: var(--border-light);
+      transform: translateX(4px);
+
+      .contact__link-arrow {
+        opacity: 1;
+        color: var(--accent-green);
+        transform: translateX(3px);
+      }
+    }
+
+    &-left {
+      display: flex;
+      align-items: center;
+      gap: $spacing-4;
+    }
+
+    &-icon {
+      width: 40px;
+      height: 40px;
+      @include flex-center;
+      font-family: $font-family-mono;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-bold;
+      background: var(--glass-bg);
+      border: 1px solid var(--border-color);
+      border-radius: $radius-base;
+      flex-shrink: 0;
+    }
+
+    &-text {
+      @include flex-column;
+      gap: 2px;
+    }
+
+    &-name {
+      font-size: $font-size-sm;
+      font-weight: $font-weight-semibold;
+      color: var(--text-primary);
+    }
+
+    &-hint {
+      font-size: $font-size-xs;
+      color: var(--text-muted);
+    }
+
+    &-arrow {
+      color: var(--text-muted);
+      opacity: 0.4;
+      transition: $transition-base;
+      flex-shrink: 0;
+    }
+  }
+}

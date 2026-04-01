@@ -1,0 +1,39 @@
+<section class="stack" id="tech-stack">
+  <div class="stack__container">
+    <div class="stack__header" appScrollReveal>
+      <p class="stack__label">
+        <span class="stack__label-line"></span>
+        Tech Stack
+      </p>
+      <h2 class="stack__title">
+        Tools I work with
+        <span class="stack__title--accent">daily</span>
+      </h2>
+    </div>
+
+    <div class="stack__grid">
+      @for (category of categories; track trackByName($index, category)) {
+        <div class="stack__category" appScrollReveal>
+          <div class="stack__category-header">
+            <div class="stack__category-dot" [style.background]="category.color"></div>
+            <h3 class="stack__category-name">{{ category.name }}</h3>
+          </div>
+          <div class="stack__techs">
+            @for (tech of category.items; track trackByTech($index, tech)) {
+              <div class="stack__tech">
+                <img
+                  [src]="tech.icon"
+                  [alt]="tech.name"
+                  class="stack__tech-icon"
+                  width="40"
+                  height="40"
+                  loading="lazy" />
+                <span class="stack__tech-name">{{ tech.name }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

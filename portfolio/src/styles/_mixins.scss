@@ -1,0 +1,131 @@
+@use 'variables' as *;
+
+// === Responsive (mobile-first) ===
+@mixin respond-to($breakpoint) {
+  $value: map-get($breakpoints, $breakpoint);
+  @if $value {
+    @media (min-width: $value) {
+      @content;
+    }
+  }
+}
+
+// === Flex shortcuts ===
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// === Section ===
+@mixin section-padding {
+  padding: $spacing-12 $spacing-5;
+
+  @include respond-to('md') {
+    padding: $spacing-16 $spacing-8;
+  }
+
+  @include respond-to('xl') {
+    padding: $spacing-20 $spacing-10;
+  }
+}
+
+@mixin container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 $spacing-5;
+
+  @include respond-to('md') {
+    padding: 0 $spacing-6;
+  }
+}
+
+// === Glass card ===
+@mixin glass-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--border-color);
+  border-radius: $radius-xl;
+  backdrop-filter: blur(12px);
+  transition: $transition-base;
+}
+
+@mixin glass-card-hover {
+  &:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--border-light);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+// === Text gradient ===
+@mixin text-gradient {
+  background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// === Focus ring ===
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid var(--accent-green);
+    outline-offset: 2px;
+  }
+}
+
+// === Scrollbar ===
+@mixin vsc-scrollbar {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--scroll-thumb);
+    border-radius: 3px;
+
+    &:hover {
+      background: var(--scroll-thumb-hover);
+    }
+  }
+}
+
+// === Section header ===
+@mixin section-header {
+  text-align: center;
+  margin-bottom: $spacing-10;
+
+  @include respond-to('md') {
+    margin-bottom: $spacing-12;
+  }
+}
+
+// === Section label ===
+@mixin section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-3;
+  font-family: $font-family-mono;
+  font-size: $font-size-sm;
+  color: var(--accent-green);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: $spacing-4;
+}

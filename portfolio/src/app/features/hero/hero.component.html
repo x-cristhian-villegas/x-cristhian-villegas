@@ -1,0 +1,134 @@
+<section class="hero" id="hero">
+  <div class="hero__grid-lines"></div>
+
+  <div class="hero__container">
+    <!-- Left: Content -->
+    <div class="hero__content">
+      <h1 class="hero__name">
+        Cristhian<br />
+        <span class="hero__name--accent">Villegas</span>
+        <span class="hero__name--dim">.</span>
+      </h1>
+
+      <div class="hero__role-line">
+        <span class="hero__role-label">I'm a&nbsp;</span>
+        <span class="hero__role-typed">{{ displayText() }}</span>
+        <span class="hero__role-cursor"></span>
+      </div>
+
+      <p class="hero__bio">
+        I design and build <strong>distributed systems</strong>,
+        <strong>cloud-native APIs</strong>, and <strong>modern web apps</strong>
+        that are fast, scalable, and maintainable.
+      </p>
+
+      <div class="hero__actions">
+        <a class="hero__btn hero__btn--primary" href="#contact"
+          (click)="$event.preventDefault(); scrollTo('#contact')">
+          <span>Get in touch</span>
+          <svg class="hero__btn-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a class="hero__btn hero__btn--outline" href="#about"
+          (click)="$event.preventDefault(); scrollTo('#about')">
+          See my work
+        </a>
+      </div>
+
+      <div class="hero__quick-stack">
+        <span class="hero__quick-label">Tech:</span>
+        <div class="hero__quick-tags">
+          <span class="hero__quick-tag">Java</span>
+          <span class="hero__quick-tag">Spring Boot</span>
+          <span class="hero__quick-tag">Angular</span>
+          <span class="hero__quick-tag">TypeScript</span>
+          <span class="hero__quick-tag">AWS</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Visual -->
+    <div class="hero__visual">
+      <!-- Floating tech badges -->
+      @for (badge of techBadges; track badge.name) {
+        <span
+          class="hero__float-badge"
+          [style.left.%]="badge.x"
+          [style.top.%]="badge.y">
+          {{ badge.name }}
+        </span>
+      }
+
+      <div class="hero__editor">
+        <div class="hero__editor-sidebar">
+          <span class="hero__editor-sidebar-icon hero__editor-sidebar-icon--active">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-7-7Z" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M13 2v7h7" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </span>
+          <span class="hero__editor-sidebar-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.5"/>
+              <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </span>
+          <span class="hero__editor-sidebar-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M16 18l2-2-2-2M8 18l-2-2 2-2M14 4l-4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+
+        <div class="hero__editor-main">
+          <div class="hero__editor-tabs">
+            <span class="hero__editor-tab hero__editor-tab--active">
+              <span class="hero__editor-tab-dot"></span>
+              profile.ts
+            </span>
+            <span class="hero__editor-tab">
+              config.yaml
+            </span>
+          </div>
+
+          <div class="hero__editor-content">
+            <div class="hero__editor-lines">
+              @for (n of [1,2,3,4,5,6,7,8,9,10,11,12,13,14]; track n) {
+                <span class="hero__editor-ln" [class.hero__editor-ln--active]="n === 8">{{ n }}</span>
+              }
+            </div>
+            <pre class="hero__editor-code"><code><span class="hl-kw">interface</span> <span class="hl-type">Developer</span> &#123;
+  <span class="hl-prop">name</span>: <span class="hl-type">string</span>;
+  <span class="hl-prop">role</span>: <span class="hl-type">string</span>[];
+  <span class="hl-prop">stack</span>: <span class="hl-type">string</span>[];
+  <span class="hl-prop">loves</span>: <span class="hl-type">string</span>;
+&#125;
+
+<span class="hl-active"><span class="hl-kw">const</span> <span class="hl-var">cristhian</span>: <span class="hl-type">Developer</span> = &#123;</span>
+  <span class="hl-prop">name</span>: <span class="hl-str">"Cristhian Villegas"</span>,
+  <span class="hl-prop">role</span>: [<span class="hl-str">"Fullstack"</span>, <span class="hl-str">"Cloud"</span>],
+  <span class="hl-prop">stack</span>: [<span class="hl-str">"Java"</span>, <span class="hl-str">"Spring"</span>, <span class="hl-str">"Angular"</span>],
+  <span class="hl-prop">loves</span>: <span class="hl-str">"Clean Architecture"</span>,
+&#125;;</code></pre>
+          </div>
+
+          <div class="hero__editor-statusbar">
+            <span>Ln 8, Col 12</span>
+            <span>TypeScript</span>
+            <span>UTF-8</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a class="hero__scroll" href="#about"
+    (click)="$event.preventDefault(); scrollTo('#about')"
+    aria-label="Scroll to about">
+    <div class="hero__scroll-mouse">
+      <div class="hero__scroll-wheel"></div>
+    </div>
+    <span class="hero__scroll-text">scroll</span>
+  </a>
+</section>

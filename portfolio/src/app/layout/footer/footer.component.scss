@@ -1,0 +1,62 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+.footer {
+  padding: $spacing-10 $spacing-5;
+  border-top: 1px solid var(--border-color);
+
+  &__container {
+    @include container;
+    @include flex-column;
+    align-items: center;
+    gap: $spacing-6;
+  }
+
+  &__top {
+    text-align: center;
+  }
+
+  &__logo {
+    display: inline-block;
+    font-family: $font-family-mono;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: var(--text-primary);
+    margin-bottom: $spacing-2;
+
+    &-symbol {
+      color: var(--accent-green);
+    }
+  }
+
+  &__tagline {
+    font-size: $font-size-sm;
+    color: var(--text-muted);
+  }
+
+  &__bottom {
+    @include flex-column;
+    align-items: center;
+    gap: $spacing-1;
+
+    @include respond-to('sm') {
+      flex-direction: row;
+      gap: $spacing-4;
+    }
+  }
+
+  &__copy {
+    font-size: $font-size-xs;
+    color: var(--text-muted);
+  }
+
+  &__tech {
+    font-size: $font-size-xs;
+    color: var(--text-muted);
+
+    &-hl {
+      color: var(--accent-green);
+      font-weight: $font-weight-medium;
+    }
+  }
+}

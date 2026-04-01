@@ -1,0 +1,54 @@
+<section class="contact" id="contact">
+  <div class="contact__glow"></div>
+
+  <div class="contact__container">
+    <div class="contact__wrapper" appScrollReveal>
+      <div class="contact__box">
+        <!-- Left: message -->
+        <div class="contact__info">
+          <p class="contact__label">
+            <span class="contact__label-line"></span>
+            Contact
+          </p>
+          <h2 class="contact__title">
+            Let's work
+            <span class="contact__title--accent">together</span>
+          </h2>
+          <p class="contact__desc">
+            Got a project in mind or want to chat about architecture,
+            distributed systems, or cloud? I'd love to hear from you.
+          </p>
+          <div class="contact__email">
+            <span class="contact__email-label">Email me at</span>
+            <a class="contact__email-link" href="mailto:tu-email@ejemplo.com">
+              tu-email&#64;ejemplo.com
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: links -->
+        <div class="contact__links">
+          @for (link of socialLinks; track trackByName($index, link)) {
+            <a
+              class="contact__link"
+              [href]="link.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              [attr.aria-label]="'Visit ' + link.name">
+              <div class="contact__link-left">
+                <span class="contact__link-icon" [style.color]="link.color">{{ link.icon }}</span>
+                <div class="contact__link-text">
+                  <span class="contact__link-name">{{ link.name }}</span>
+                  <span class="contact__link-hint">{{ link.hint }}</span>
+                </div>
+              </div>
+              <svg class="contact__link-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,41 @@
+<section class="about" id="about">
+  <div class="about__container">
+    <div class="about__header" appScrollReveal>
+      <p class="about__label">
+        <span class="about__label-line"></span>
+        About me
+      </p>
+      <h2 class="about__title">
+        Software Engineer &
+        <span class="about__title--accent">Cloud Architect</span>
+      </h2>
+      <p class="about__desc">
+        I build production-grade distributed systems and cloud-native
+        applications with clean, maintainable architectures.
+        From robust APIs with Spring Boot to responsive UIs with Angular
+        and infrastructure on AWS with Kubernetes.
+      </p>
+    </div>
+
+    <div class="about__grid">
+      @for (item of aboutData; track trackByLabel($index, item)) {
+        <div class="about__card" appScrollReveal>
+          <div class="about__card-header">
+            <span class="about__card-icon" [style.color]="item.color">
+              {{ item.icon }}
+            </span>
+            <h3 class="about__card-title">{{ item.label }}</h3>
+          </div>
+          <ul class="about__card-list">
+            @for (entry of item.items; track trackByItem($index)) {
+              <li class="about__card-item">
+                <span class="about__card-dash" [style.color]="item.color">&ndash;</span>
+                {{ entry }}
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>

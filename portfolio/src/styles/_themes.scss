@@ -1,0 +1,138 @@
+// ============================================
+// Theme definitions via CSS custom properties
+// ============================================
+
+// === VSCode Dark (default) ===
+:root,
+[data-theme="vscode"] {
+  // Backgrounds
+  --bg-primary:       #141414;
+  --bg-secondary:     #1e1e1e;
+  --bg-card:          #1c1c1c;
+  --bg-surface:       #252526;
+  --bg-elevated:      #333333;
+  --bg-input:         #3c3c3c;
+
+  // Borders
+  --border-color:     rgba(255, 255, 255, 0.06);
+  --border-light:     rgba(255, 255, 255, 0.10);
+
+  // Text
+  --text-primary:     #f0f0f0;
+  --text-secondary:   #cccccc;
+  --text-muted:       #6e6e6e;
+  --text-comment:     #6a9955;
+
+  // Accent
+  --accent-green:     #a0e534;
+  --accent-green-hover: #b4f050;
+  --accent-cyan:      #4ec9b0;
+  --accent-blue:      #007acc;
+  --accent-orange:    #ce9178;
+  --accent-yellow:    #dcdcaa;
+  --accent-purple:    #c586c0;
+  --accent-red:       #f44747;
+  --accent-light-blue: #9cdcfe;
+  --accent-keyword:   #569cd6;
+
+  // Shadows
+  --shadow-sm:        0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-base:      0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-lg:        0 8px 40px rgba(0, 0, 0, 0.4);
+  --shadow-glow:      0 0 30px rgba(160, 229, 52, 0.12);
+
+  // Glass
+  --glass-bg:         rgba(255, 255, 255, 0.03);
+  --glass-bg-hover:   rgba(255, 255, 255, 0.05);
+  --noise-opacity:    0.03;
+  --dot-opacity:      0.04;
+  --grid-opacity:     0.015;
+
+  // Orbs
+  --orb-green:        rgba(160, 229, 52, 0.045);
+  --orb-blue:         rgba(0, 122, 204, 0.04);
+  --orb-purple:       rgba(197, 134, 192, 0.03);
+
+  // Code dots
+  --dot-red:          #ff5f57;
+  --dot-yellow:       #febc2e;
+  --dot-green:        #28c840;
+
+  // Specific
+  --header-bg:        rgba(20, 20, 20, 0.85);
+  --overlay-bg:       rgba(0, 0, 0, 0.5);
+  --selection-bg:     rgba(160, 229, 52, 0.3);
+  --scroll-thumb:     rgba(255, 255, 255, 0.1);
+  --scroll-thumb-hover: rgba(255, 255, 255, 0.2);
+
+  // Editor statusbar
+  --statusbar-bg:     #007acc;
+  --statusbar-text:   #ffffff;
+}
+
+// === IntelliJ Darcula ===
+[data-theme="intellij"] {
+  // Backgrounds
+  --bg-primary:       #212121;
+  --bg-secondary:     #2b2b2b;
+  --bg-card:          #2b2b2b;
+  --bg-surface:       #313335;
+  --bg-elevated:      #3c3f41;
+  --bg-input:         #45494a;
+
+  // Borders
+  --border-color:     rgba(255, 255, 255, 0.08);
+  --border-light:     rgba(255, 255, 255, 0.12);
+
+  // Text
+  --text-primary:     #a9b7c6;
+  --text-secondary:   #bababa;
+  --text-muted:       #606366;
+  --text-comment:     #808080;
+
+  // Accent — Darcula syntax palette
+  --accent-green:     #6a8759;
+  --accent-green-hover: #7a9b65;
+  --accent-cyan:      #3574f0;
+  --accent-blue:      #3574f0;
+  --accent-orange:    #cc7832;
+  --accent-yellow:    #ffc66d;
+  --accent-purple:    #9876aa;
+  --accent-red:       #ff6b68;
+  --accent-light-blue: #6897bb;
+  --accent-keyword:   #cc7832;
+
+  // Shadows
+  --shadow-sm:        0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-base:      0 4px 20px rgba(0, 0, 0, 0.35);
+  --shadow-lg:        0 8px 40px rgba(0, 0, 0, 0.45);
+  --shadow-glow:      0 0 30px rgba(204, 120, 50, 0.12);
+
+  // Glass
+  --glass-bg:         rgba(255, 255, 255, 0.03);
+  --glass-bg-hover:   rgba(255, 255, 255, 0.06);
+  --noise-opacity:    0.025;
+  --dot-opacity:      0.04;
+  --grid-opacity:     0.02;
+
+  // Orbs
+  --orb-green:        rgba(106, 135, 89, 0.06);
+  --orb-blue:         rgba(53, 116, 240, 0.05);
+  --orb-purple:       rgba(152, 118, 170, 0.04);
+
+  // Code dots
+  --dot-red:          #ff5f57;
+  --dot-yellow:       #febc2e;
+  --dot-green:        #28c840;
+
+  // Specific
+  --header-bg:        rgba(33, 33, 33, 0.9);
+  --overlay-bg:       rgba(0, 0, 0, 0.6);
+  --selection-bg:     rgba(33, 66, 131, 0.6);
+  --scroll-thumb:     rgba(255, 255, 255, 0.1);
+  --scroll-thumb-hover: rgba(255, 255, 255, 0.2);
+
+  // Editor statusbar
+  --statusbar-bg:     var(--bg-elevated);
+  --statusbar-text:   var(--text-muted);
+}

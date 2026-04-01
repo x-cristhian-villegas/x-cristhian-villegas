@@ -1,0 +1,63 @@
+<header class="header" [class.header--scrolled]="isScrolled()">
+  <nav class="header__nav">
+    <a class="header__logo" (click)="scrollTo('#hero')">
+      <span class="header__logo-symbol">&lt;</span>CV<span class="header__logo-symbol">/&gt;</span>
+    </a>
+
+    <ul class="header__menu">
+      @for (link of navLinks; track link.href) {
+        <li>
+          <a
+            class="header__menu-link"
+            (click)="scrollTo(link.href)"
+            tabindex="0">
+            <span class="header__menu-number">0{{ $index + 1 }}.</span>
+            {{ link.label }}
+          </a>
+        </li>
+      }
+    </ul>
+
+    <div class="header__actions">
+      <button
+        class="header__theme-toggle"
+        (click)="toggleTheme()"
+        [attr.aria-label]="themeLabel()">
+        {{ themeIcon() }}
+      </button>
+
+      <a class="header__cta" href="#contact" (click)="$event.preventDefault(); scrollTo('#contact')">
+        Contact
+      </a>
+
+      <button
+        class="header__burger"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="isMobileMenuOpen()"
+        aria-label="Toggle menu">
+        <span class="header__burger-line" [class.header__burger-line--open]="isMobileMenuOpen()"></span>
+        <span class="header__burger-line" [class.header__burger-line--open]="isMobileMenuOpen()"></span>
+        <span class="header__burger-line" [class.header__burger-line--open]="isMobileMenuOpen()"></span>
+      </button>
+    </div>
+  </nav>
+
+  @if (isMobileMenuOpen()) {
+    <div class="header__mobile-overlay" (click)="closeMenu()"></div>
+    <aside class="header__mobile-panel">
+      <div class="header__mobile-links">
+        @for (link of navLinks; track link.href) {
+          <a
+            class="header__mobile-link"
+            (click)="scrollTo(link.href)">
+            <span class="header__mobile-number">0{{ $index + 1 }}.</span>
+            {{ link.label }}
+          </a>
+        }
+      </div>
+      <a class="header__mobile-cta" href="#contact" (click)="$event.preventDefault(); scrollTo('#contact')">
+        Contact
+      </a>
+    </aside>
+  }
+</header>

@@ -35,7 +35,11 @@
     grid-template-columns: 1fr;
     gap: $spacing-8;
 
+    // Full-width on mobile: stretch to viewport edges
+    margin: 0 (-$spacing-5);
+
     @include respond-to('sm') {
+      margin: 0;
       padding: $spacing-8 $spacing-6;
     }
 
@@ -119,6 +123,8 @@
     @include flex-column;
     gap: $spacing-3;
     justify-content: center;
+    min-width: 0;
+    overflow: hidden;
   }
 
   &__link {
@@ -155,6 +161,7 @@
       align-items: center;
       gap: $spacing-3;
       min-width: 0;
+      overflow: hidden;
 
       @include respond-to('sm') {
         gap: $spacing-4;

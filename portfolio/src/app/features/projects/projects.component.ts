@@ -68,6 +68,19 @@ export class ProjectsComponent {
       featured: true,
       status: 'Early stage',
     },
+    {
+      name: 'Blog AGVB',
+      tagline: 'Technical blog with rich-text editor and analytics',
+      description:
+        'Full-stack blogging platform with a TipTap rich-text editor, syntax-highlighted code blocks, Google OAuth comments, newsletter subscriptions, custom analytics tracking, and SEO optimization with Open Graph and JSON-LD structured data.',
+      tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Tailwind CSS', 'Docker'],
+      liveUrl: 'https://blog.iamcristhian.dev',
+      repoUrl: 'https://github.com/x-cristhian-villegas/cms-agvb',
+      icon: 'BL',
+      color: 'var(--accent-orange)',
+      featured: true,
+      status: 'Production',
+    },
   ];
 
   readonly filtered = computed(() => {

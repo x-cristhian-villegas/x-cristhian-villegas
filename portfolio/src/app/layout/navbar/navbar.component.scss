@@ -25,16 +25,20 @@
   }
 
   &__logo {
-    font-family: $font-family-mono;
-    font-size: $font-size-xl;
-    font-weight: $font-weight-bold;
-    color: var(--text-primary);
     cursor: pointer;
     @include focus-ring;
-    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
 
-    &-symbol {
-      color: var(--accent-green);
+    &-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      transition: $transition-base;
+
+      &:hover {
+        filter: drop-shadow(0 0 6px var(--accent-green));
+      }
     }
   }
 

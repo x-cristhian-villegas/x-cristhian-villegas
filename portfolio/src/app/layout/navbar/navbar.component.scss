@@ -31,13 +31,12 @@
     align-items: center;
 
     &-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
+      width: 38px;
+      height: 38px;
       transition: $transition-base;
 
       &:hover {
-        filter: drop-shadow(0 0 6px var(--accent-green));
+        opacity: 0.8;
       }
     }
   }

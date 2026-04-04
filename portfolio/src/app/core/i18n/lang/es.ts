@@ -1,6 +1,6 @@
 export const es: Record<string, string> = {
   // === Navbar ===
-  'nav.about': 'Quiénes somos',
+  'nav.about': 'Sobre mí',
   'nav.stack': 'Stack',
   'nav.architecture': 'Arquitectura',
   'nav.projects': 'Proyectos',
@@ -18,10 +18,10 @@ export const es: Record<string, string> = {
   'hero.cta.work': 'Ver mi trabajo',
   'hero.tech.label': 'Tech:',
   'hero.scroll': 'scroll',
-  'hero.scroll.aria': 'Ir a quiénes somos',
+  'hero.scroll.aria': 'Ir a sobre mí',
 
   // === About ===
-  'about.label': 'Quiénes somos',
+  'about.label': 'Sobre mí',
   'about.title': 'Ingeniero de Software &',
   'about.title.accent': 'Arquitecto Cloud',
   'about.desc': 'Construyo sistemas distribuidos de producción y aplicaciones cloud-native con arquitecturas limpias y mantenibles. Desde APIs robustas con Spring Boot hasta interfaces responsivas con Angular e infraestructura en AWS con Kubernetes.',

@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, signal, OnInit, OnDestroy, inject, effect } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, OnDestroy, inject, effect } from '@angular/core';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 
@@ -10,7 +10,7 @@ import { TranslatePipe } from '../../core/i18n/translate.pipe';
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
 })
-export class HeroComponent implements OnInit, OnDestroy {
+export class HeroComponent implements OnDestroy {
   readonly i18n = inject(I18nService);
 
   private readonly roleKeys = [
@@ -35,14 +35,9 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   constructor() {
     effect(() => {
-      // Re-read lang to restart typing when language changes
       this.i18n.lang();
       this.restart();
     });
-  }
-
-  ngOnInit(): void {
-    this.type();
   }
 
   ngOnDestroy(): void {

@@ -108,6 +108,14 @@ export const en: Record<string, string> = {
   'footer.tagline': 'Designed & built by Cristhian Villegas',
   'footer.made': 'Made with',
 
+  // === Blog feed ===
+  'blog.label': 'From the Blog',
+  'blog.title': 'Latest',
+  'blog.title.accent': 'articles',
+  'blog.read': 'Read article',
+  'blog.all': 'View all articles',
+  'blog.loading': 'Loading articles...',
+
   // === Internal links ===
   'about.cta': 'See what I\'ve built',
   'arch.cta': 'Get in touch',

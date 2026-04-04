@@ -1,0 +1,51 @@
+<section class="blog" id="blog">
+  <div class="blog__container">
+    <div class="blog__header" appScrollReveal>
+      <p class="blog__label">
+        <span class="blog__label-line"></span>
+        {{ 'blog.label' | t }}
+      </p>
+      <h2 class="blog__title">
+        {{ 'blog.title' | t }}
+        <span class="blog__title--accent">{{ 'blog.title.accent' | t }}</span>
+      </h2>
+    </div>
+
+    @if (loading()) {
+      <p class="blog__loading">{{ 'blog.loading' | t }}</p>
+    } @else if (posts().length) {
+      <div class="blog__grid">
+        @for (post of posts(); track trackByLink($index, post)) {
+          <a
+            class="blog__card"
+            [href]="post.link"
+            target="_blank"
+            rel="noopener noreferrer"
+            appScrollReveal>
+            <div class="blog__card-top">
+              <span class="blog__card-category">{{ post.category }}</span>
+              <span class="blog__card-date">{{ formatDate(post.pubDate) }}</span>
+            </div>
+            <h3 class="blog__card-title">{{ post.title }}</h3>
+            <p class="blog__card-desc">{{ post.description }}</p>
+            <span class="blog__card-read">
+              {{ 'blog.read' | t }}
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+        }
+      </div>
+
+      <div class="blog__cta" appScrollReveal>
+        <a class="blog__cta-link" [href]="blogUrl" target="_blank" rel="noopener noreferrer">
+          {{ 'blog.all' | t }}
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    }
+  </div>
+</section>

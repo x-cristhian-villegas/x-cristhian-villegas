@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, signal, OnDestroy, inject, effect } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, OnInit, OnDestroy, inject, effect, untracked } from '@angular/core';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
 
@@ -10,7 +10,7 @@ import { TranslatePipe } from '../../core/i18n/translate.pipe';
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
 })
-export class HeroComponent implements OnDestroy {
+export class HeroComponent implements OnInit, OnDestroy {
   readonly i18n = inject(I18nService);
 
   private readonly roleKeys = [
@@ -32,12 +32,20 @@ export class HeroComponent implements OnDestroy {
   private charIndex = 0;
   private isDeleting = false;
   private timeoutId: ReturnType<typeof setTimeout> | null = null;
+  private initialized = false;
 
   constructor() {
     effect(() => {
       this.i18n.lang();
-      this.restart();
+      if (this.initialized) {
+        untracked(() => this.restart());
+      }
     });
+  }
+
+  ngOnInit(): void {
+    this.initialized = true;
+    this.type();
   }
 
   ngOnDestroy(): void {

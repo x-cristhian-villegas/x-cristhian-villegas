@@ -1,9 +1,11 @@
 import { Component, signal, inject, HostListener, ChangeDetectionStrategy, computed } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { ThemeService } from '../../core/theme/theme.service';
+import { I18nService } from '../../core/i18n/i18n.service';
+import { TranslatePipe } from '../../core/i18n/translate.pipe';
 
 interface NavLink {
-  label: string;
+  labelKey: string;
   href?: string;
   route?: string;
 }
@@ -11,7 +13,7 @@ interface NavLink {
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, TranslatePipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
@@ -19,18 +21,22 @@ interface NavLink {
 export class NavbarComponent {
   private themeService = inject(ThemeService);
   private router = inject(Router);
+  readonly i18n = inject(I18nService);
 
   isScrolled = signal(false);
   isMobileMenuOpen = signal(false);
   themeIcon = computed(() => this.themeService.theme() === 'vscode' ? 'IJ' : 'VS');
-  themeLabel = computed(() => this.themeService.theme() === 'vscode' ? 'Switch to Darcula' : 'Switch to VSCode Dark');
+  themeLabel = computed(() => this.themeService.theme() === 'vscode'
+    ? this.i18n.t('nav.theme.darcula')
+    : this.i18n.t('nav.theme.vscode'));
+  langLabel = computed(() => this.i18n.lang() === 'en' ? 'ES' : 'EN');
 
   readonly navLinks: NavLink[] = [
-    { label: 'About', href: '#about' },
-    { label: 'Stack', href: '#tech-stack' },
-    { label: 'Architecture', href: '#architecture' },
-    { label: 'Projects', route: '/projects' },
-    { label: 'Contact', href: '#contact' },
+    { labelKey: 'nav.about', href: '#about' },
+    { labelKey: 'nav.stack', href: '#tech-stack' },
+    { labelKey: 'nav.architecture', href: '#architecture' },
+    { labelKey: 'nav.projects', route: '/projects' },
+    { labelKey: 'nav.contact', href: '#contact' },
   ];
 
   @HostListener('window:scroll')
@@ -40,6 +46,10 @@ export class NavbarComponent {
 
   toggleTheme(): void {
     this.themeService.toggle();
+  }
+
+  toggleLang(): void {
+    this.i18n.toggle();
   }
 
   toggleMenu(): void {

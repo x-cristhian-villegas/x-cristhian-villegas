@@ -1,17 +1,22 @@
-import { Component, ChangeDetectionStrategy, signal, OnInit, OnDestroy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, OnInit, OnDestroy, inject, effect } from '@angular/core';
+import { I18nService } from '../../core/i18n/i18n.service';
+import { TranslatePipe } from '../../core/i18n/translate.pipe';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
+  imports: [TranslatePipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
 })
 export class HeroComponent implements OnInit, OnDestroy {
-  readonly roles = [
-    'Fullstack Developer',
-    'Cloud Architect',
-    'Backend Engineer',
+  readonly i18n = inject(I18nService);
+
+  private readonly roleKeys = [
+    'hero.role.fullstack',
+    'hero.role.cloud',
+    'hero.role.backend',
   ];
 
   readonly techBadges = [
@@ -22,12 +27,19 @@ export class HeroComponent implements OnInit, OnDestroy {
     { name: 'K8s', x: 45, y: 92 },
   ];
 
-  currentRole = signal(this.roles[0]);
   displayText = signal('');
   private roleIndex = 0;
   private charIndex = 0;
   private isDeleting = false;
   private timeoutId: ReturnType<typeof setTimeout> | null = null;
+
+  constructor() {
+    effect(() => {
+      // Re-read lang to restart typing when language changes
+      this.i18n.lang();
+      this.restart();
+    });
+  }
 
   ngOnInit(): void {
     this.type();
@@ -41,8 +53,17 @@ export class HeroComponent implements OnInit, OnDestroy {
     document.querySelector(selector)?.scrollIntoView({ behavior: 'smooth' });
   }
 
+  private restart(): void {
+    if (this.timeoutId) clearTimeout(this.timeoutId);
+    this.roleIndex = 0;
+    this.charIndex = 0;
+    this.isDeleting = false;
+    this.displayText.set('');
+    this.type();
+  }
+
   private type(): void {
-    const current = this.roles[this.roleIndex];
+    const current = this.i18n.t(this.roleKeys[this.roleIndex]);
 
     if (!this.isDeleting) {
       this.charIndex++;
@@ -62,7 +83,7 @@ export class HeroComponent implements OnInit, OnDestroy {
 
       if (this.charIndex === 0) {
         this.isDeleting = false;
-        this.roleIndex = (this.roleIndex + 1) % this.roles.length;
+        this.roleIndex = (this.roleIndex + 1) % this.roleKeys.length;
         this.timeoutId = setTimeout(() => this.type(), 400);
         return;
       }

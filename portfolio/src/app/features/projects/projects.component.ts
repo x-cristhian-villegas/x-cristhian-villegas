@@ -1,31 +1,34 @@
-import { Component, ChangeDetectionStrategy, signal, computed } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ScrollRevealDirective } from '../../shared/animations/scroll.animation';
 import { AdBannerComponent } from '../../shared/ad-banner/ad-banner.component';
+import { I18nService } from '../../core/i18n/i18n.service';
+import { TranslatePipe } from '../../core/i18n/translate.pipe';
 
 interface Project {
   name: string;
-  tagline: string;
-  description: string;
+  taglineKey: string;
+  descKey: string;
   tags: string[];
   liveUrl?: string;
   repoUrl?: string;
   icon: string;
   color: string;
   featured: boolean;
-  status?: string;
+  statusKey?: string;
 }
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [RouterLink, ScrollRevealDirective, AdBannerComponent],
+  imports: [RouterLink, ScrollRevealDirective, AdBannerComponent, TranslatePipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
 })
 export class ProjectsComponent {
   private readonly PAGE_SIZE = 5;
+  readonly i18n = inject(I18nService);
 
   readonly query = signal('');
   readonly page = signal(1);
@@ -33,53 +36,49 @@ export class ProjectsComponent {
   readonly projects: Project[] = [
     {
       name: 'REST Client AGVB',
-      tagline: 'Collaborative API testing in the browser',
-      description:
-        'Free API testing platform for developers. Supports all HTTP methods with JSON syntax highlighting, environment variables, request history, collections, workspace collaboration, and Google OAuth authentication.',
+      taglineKey: 'projects.rest.tagline',
+      descKey: 'projects.rest.desc',
       tags: ['Angular', 'Node.js', 'Google OAuth', 'REST API', 'Docker'],
       liveUrl: 'https://rest.iamcristhian.dev',
       repoUrl: 'https://github.com/x-cristhian-villegas/rest-client-agvb-web',
       icon: '>>',
       color: 'var(--accent-cyan)',
       featured: true,
-      status: 'Collecting feedback',
+      statusKey: 'projects.rest.status',
     },
     {
       name: 'Creaciones Angie',
-      tagline: 'Artisan e-commerce with online quotation system',
-      description:
-        'Landing page for a Mexican artisanal business specializing in handmade candles, resin art, and creative stationery. Features an integrated quotation system, contact form, and responsive design.',
+      taglineKey: 'projects.angie.tagline',
+      descKey: 'projects.angie.desc',
       tags: ['Spring Boot', 'Thymeleaf', 'Spring Security', 'Bootstrap Icons'],
       liveUrl: 'https://creaciones-angy.com',
       icon: 'CA',
       color: 'var(--accent-orange)',
       featured: true,
-      status: 'v1 Production',
+      statusKey: 'projects.angie.status',
     },
     {
       name: 'BPM Engine AGVB',
-      tagline: 'Lightweight process engine with process-as-code',
-      description:
-        'Custom BPM engine where business processes are defined as annotated Java classes. Features async steps with callback resumption, smart retries (ERROR vs FAILED), declarative I/O mapping, full audit trail, and an Angular dashboard with interactive flow diagrams.',
+      taglineKey: 'projects.bpm.tagline',
+      descKey: 'projects.bpm.desc',
       tags: ['Spring Boot', 'Angular', 'PostgreSQL', 'Docker'],
       liveUrl: 'https://bpm.iamcristhian.dev/dashboard',
       icon: 'BP',
       color: 'var(--accent-cyan)',
       featured: true,
-      status: 'Early stage',
+      statusKey: 'projects.bpm.status',
     },
     {
       name: 'Blog AGVB',
-      tagline: 'Technical blog with rich-text editor and analytics',
-      description:
-        'Full-stack blogging platform with a TipTap rich-text editor, syntax-highlighted code blocks, Google OAuth comments, newsletter subscriptions, custom analytics tracking, and SEO optimization with Open Graph and JSON-LD structured data.',
+      taglineKey: 'projects.blog.tagline',
+      descKey: 'projects.blog.desc',
       tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Tailwind CSS', 'Docker'],
       liveUrl: 'https://blog.iamcristhian.dev',
       repoUrl: 'https://github.com/x-cristhian-villegas/cms-agvb',
       icon: 'BL',
       color: 'var(--accent-orange)',
       featured: true,
-      status: 'Production',
+      statusKey: 'projects.blog.status',
     },
   ];
 
@@ -131,8 +130,8 @@ export class ProjectsComponent {
     for (const term of terms) {
       let termScore = 0;
       const nameLower = project.name.toLowerCase();
-      const taglineLower = project.tagline.toLowerCase();
-      const descLower = project.description.toLowerCase();
+      const taglineLower = this.i18n.t(project.taglineKey).toLowerCase();
+      const descLower = this.i18n.t(project.descKey).toLowerCase();
       const tagsJoined = project.tags.join(' ').toLowerCase();
 
       if (nameLower.includes(term)) termScore += 10;
@@ -140,7 +139,7 @@ export class ProjectsComponent {
       if (taglineLower.includes(term)) termScore += 5;
       if (descLower.includes(term)) termScore += 3;
 
-      if (termScore === 0) return 0; // all terms must match
+      if (termScore === 0) return 0;
       total += termScore;
     }
 

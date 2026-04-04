@@ -1,67 +1,55 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, computed } from '@angular/core';
 import { ScrollRevealDirective } from '../../shared/animations/scroll.animation';
+import { I18nService } from '../../core/i18n/i18n.service';
+import { TranslatePipe } from '../../core/i18n/translate.pipe';
 
 interface AboutItem {
   icon: string;
-  label: string;
+  labelKey: string;
   color: string;
-  items: string[];
+  itemKeys: string[];
 }
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [ScrollRevealDirective],
+  imports: [ScrollRevealDirective, TranslatePipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
 })
 export class AboutComponent {
+  readonly i18n = inject(I18nService);
+
   readonly aboutData: AboutItem[] = [
     {
       icon: '{}',
-      label: 'Focus',
+      labelKey: 'about.card.focus',
       color: 'var(--accent-green)',
-      items: [
-        'Distributed systems & microservices',
-        'Cloud-native applications (AWS)',
-        'Clean Architecture & DDD',
-      ],
+      itemKeys: ['about.card.focus.1', 'about.card.focus.2', 'about.card.focus.3'],
     },
     {
       icon: '>_',
-      label: 'Currently Building',
+      labelKey: 'about.card.building',
       color: 'var(--accent-cyan)',
-      items: [
-        'Production-grade APIs with Spring Boot',
-        'Responsive UIs with Angular',
-        'Container orchestration with K8s',
-      ],
+      itemKeys: ['about.card.building.1', 'about.card.building.2', 'about.card.building.3'],
     },
     {
       icon: 'AI',
-      label: 'AI-Powered Workflow',
+      labelKey: 'about.card.ai',
       color: 'var(--accent-purple)',
-      items: [
-        'Claude Code for AI-assisted dev',
-        'GitHub Copilot for completions',
-        'Gemini for research & ideation',
-      ],
+      itemKeys: ['about.card.ai.1', 'about.card.ai.2', 'about.card.ai.3'],
     },
     {
       icon: '#',
-      label: 'Dev Environment',
+      labelKey: 'about.card.env',
       color: 'var(--accent-keyword)',
-      items: [
-        'IntelliJ IDEA (Java/Spring)',
-        'VS Code (Angular/TypeScript)',
-        'Ubuntu/Fedora workstations',
-      ],
+      itemKeys: ['about.card.env.1', 'about.card.env.2', 'about.card.env.3'],
     },
   ];
 
   trackByLabel(_index: number, item: AboutItem): string {
-    return item.label;
+    return item.labelKey;
   }
 
   trackByItem(index: number): number {

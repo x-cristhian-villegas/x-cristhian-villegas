@@ -8,18 +8,17 @@
         <div class="contact__info">
           <p class="contact__label">
             <span class="contact__label-line"></span>
-            Contact
+            {{ 'contact.label' | t }}
           </p>
           <h2 class="contact__title">
-            Let's work
-            <span class="contact__title--accent">together</span>
+            {{ 'contact.title' | t }}
+            <span class="contact__title--accent">{{ 'contact.title.accent' | t }}</span>
           </h2>
           <p class="contact__desc">
-            Got a project in mind or want to chat about architecture,
-            distributed systems, or cloud? I'd love to hear from you.
+            {{ 'contact.desc' | t }}
           </p>
           <div class="contact__email">
-            <span class="contact__email-label">Email me at</span>
+            <span class="contact__email-label">{{ 'contact.email.label' | t }}</span>
             <a class="contact__email-link" href="mailto:x.cristhian.villegas@gmail.com">
               x.cristhian.villegas&#64;gmail.com
             </a>
@@ -45,7 +44,7 @@
                 </span>
                 <div class="contact__link-text">
                   <span class="contact__link-name">{{ link.name }}</span>
-                  <span class="contact__link-hint">{{ link.hint }}</span>
+                  <span class="contact__link-hint">{{ link.hintKey ? (link.hintKey | t) : link.url.replace('mailto:', '') }}</span>
                 </div>
               </div>
               <svg class="contact__link-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">

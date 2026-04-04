@@ -5,14 +5,14 @@
     </a>
 
     <ul class="header__menu">
-      @for (link of navLinks; track link.label) {
+      @for (link of navLinks; track link.labelKey) {
         <li>
           <a
             class="header__menu-link"
             (click)="navigate(link)"
             tabindex="0">
             <span class="header__menu-number">0{{ $index + 1 }}.</span>
-            {{ link.label }}
+            {{ link.labelKey | t }}
           </a>
         </li>
       }
@@ -21,13 +21,20 @@
     <div class="header__actions">
       <button
         class="header__theme-toggle"
+        (click)="toggleLang()"
+        [attr.aria-label]="'Switch language'">
+        {{ langLabel() }}
+      </button>
+
+      <button
+        class="header__theme-toggle"
         (click)="toggleTheme()"
         [attr.aria-label]="themeLabel()">
         {{ themeIcon() }}
       </button>
 
-      <a class="header__cta" (click)="navigate({ label: 'Contact', href: '#contact' })" tabindex="0">
-        Contact
+      <a class="header__cta" (click)="navigate({ labelKey: 'nav.contact', href: '#contact' })" tabindex="0">
+        {{ 'nav.contact' | t }}
       </a>
 
       <button
@@ -46,17 +53,17 @@
     <div class="header__mobile-overlay" (click)="closeMenu()"></div>
     <aside class="header__mobile-panel">
       <div class="header__mobile-links">
-        @for (link of navLinks; track link.label) {
+        @for (link of navLinks; track link.labelKey) {
           <a
             class="header__mobile-link"
             (click)="navigate(link)">
             <span class="header__mobile-number">0{{ $index + 1 }}.</span>
-            {{ link.label }}
+            {{ link.labelKey | t }}
           </a>
         }
       </div>
-      <a class="header__mobile-cta" (click)="navigate({ label: 'Contact', href: '#contact' })">
-        Contact
+      <a class="header__mobile-cta" (click)="navigate({ labelKey: 'nav.contact', href: '#contact' })">
+        {{ 'nav.contact' | t }}
       </a>
     </aside>
   }

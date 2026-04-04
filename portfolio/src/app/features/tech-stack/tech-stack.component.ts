@@ -1,29 +1,33 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { ScrollRevealDirective } from '../../shared/animations/scroll.animation';
-
-interface TechCategory {
-  name: string;
-  color: string;
-  items: TechItem[];
-}
+import { I18nService } from '../../core/i18n/i18n.service';
+import { TranslatePipe } from '../../core/i18n/translate.pipe';
 
 interface TechItem {
   name: string;
   icon: string;
 }
 
+interface TechCategory {
+  nameKey: string;
+  color: string;
+  items: TechItem[];
+}
+
 @Component({
   selector: 'app-tech-stack',
   standalone: true,
-  imports: [ScrollRevealDirective],
+  imports: [ScrollRevealDirective, TranslatePipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './tech-stack.component.html',
   styleUrl: './tech-stack.component.scss',
 })
 export class TechStackComponent {
+  readonly i18n = inject(I18nService);
+
   readonly categories: TechCategory[] = [
     {
-      name: 'Languages & Frameworks',
+      nameKey: 'stack.cat.languages',
       color: 'var(--accent-keyword)',
       items: [
         { name: 'Java', icon: 'https://skillicons.dev/icons?i=java&theme=dark' },
@@ -37,7 +41,7 @@ export class TechStackComponent {
       ],
     },
     {
-      name: 'Cloud, DevOps & Infra',
+      nameKey: 'stack.cat.cloud',
       color: 'var(--accent-cyan)',
       items: [
         { name: 'AWS', icon: 'https://skillicons.dev/icons?i=aws&theme=dark' },
@@ -49,7 +53,7 @@ export class TechStackComponent {
       ],
     },
     {
-      name: 'Databases',
+      nameKey: 'stack.cat.databases',
       color: 'var(--accent-orange)',
       items: [
         { name: 'PostgreSQL', icon: 'https://skillicons.dev/icons?i=postgres&theme=dark' },
@@ -58,7 +62,7 @@ export class TechStackComponent {
       ],
     },
     {
-      name: 'IDEs & Editors',
+      nameKey: 'stack.cat.ides',
       color: 'var(--accent-yellow)',
       items: [
         { name: 'IntelliJ IDEA', icon: 'https://skillicons.dev/icons?i=idea&theme=dark' },
@@ -67,7 +71,7 @@ export class TechStackComponent {
       ],
     },
     {
-      name: 'Dev Tools',
+      nameKey: 'stack.cat.tools',
       color: 'var(--accent-purple)',
       items: [
         { name: 'Postman', icon: 'https://skillicons.dev/icons?i=postman&theme=dark' },
@@ -77,7 +81,7 @@ export class TechStackComponent {
       ],
     },
     {
-      name: 'Operating Systems',
+      nameKey: 'stack.cat.os',
       color: 'var(--accent-light-blue)',
       items: [
         { name: 'Ubuntu', icon: 'https://skillicons.dev/icons?i=ubuntu&theme=dark' },
@@ -89,7 +93,7 @@ export class TechStackComponent {
   ];
 
   trackByName(_index: number, item: TechCategory): string {
-    return item.name;
+    return item.nameKey;
   }
 
   trackByTech(_index: number, item: TechItem): string {

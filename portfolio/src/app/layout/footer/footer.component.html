@@ -5,13 +5,13 @@
         <span class="footer__logo-symbol">&lt;</span>CV<span class="footer__logo-symbol">/&gt;</span>
       </a>
       <p class="footer__tagline">
-        Designed & built by Cristhian Villegas
+        {{ 'footer.tagline' | t }}
       </p>
     </div>
     <div class="footer__bottom">
       <p class="footer__copy">&copy; {{ currentYear }}</p>
       <p class="footer__tech">
-        Made with <span class="footer__tech-hl">Angular</span> +
+        {{ 'footer.made' | t }} <span class="footer__tech-hl">Angular</span> +
         <span class="footer__tech-hl">SCSS</span>
       </p>
     </div>

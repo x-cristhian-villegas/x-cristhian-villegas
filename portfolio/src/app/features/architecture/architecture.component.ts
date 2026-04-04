@@ -1,8 +1,10 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { ScrollRevealDirective } from '../../shared/animations/scroll.animation';
+import { I18nService } from '../../core/i18n/i18n.service';
+import { TranslatePipe } from '../../core/i18n/translate.pipe';
 
 interface ArchLayer {
-  name: string;
+  nameKey: string;
   color: string;
   icon: string;
   items: string[];
@@ -11,33 +13,35 @@ interface ArchLayer {
 @Component({
   selector: 'app-architecture',
   standalone: true,
-  imports: [ScrollRevealDirective],
+  imports: [ScrollRevealDirective, TranslatePipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './architecture.component.html',
   styleUrl: './architecture.component.scss',
 })
 export class ArchitectureComponent {
+  readonly i18n = inject(I18nService);
+
   readonly layers: ArchLayer[] = [
     {
-      name: 'Frontend',
+      nameKey: 'arch.layer.frontend',
       color: 'var(--accent-keyword)',
       icon: '{}',
       items: ['Angular', 'TypeScript', 'Bootstrap', 'Tailwind CSS', 'PrimeNG'],
     },
     {
-      name: 'Backend',
+      nameKey: 'arch.layer.backend',
       color: 'var(--accent-green)',
       icon: '>_',
       items: ['Spring Boot', 'REST / gRPC', 'Java'],
     },
     {
-      name: 'Data',
+      nameKey: 'arch.layer.data',
       color: 'var(--accent-orange)',
       icon: 'db',
       items: ['PostgreSQL', 'Redis', 'MongoDB'],
     },
     {
-      name: 'Infrastructure',
+      nameKey: 'arch.layer.infra',
       color: 'var(--accent-cyan)',
       icon: '##',
       items: ['Docker', 'Kubernetes', 'AWS', 'GitHub Actions'],
@@ -55,7 +59,7 @@ export class ArchitectureComponent {
   ];
 
   trackByName(_index: number, item: ArchLayer): string {
-    return item.name;
+    return item.nameKey;
   }
 
   trackByIndex(index: number): number {

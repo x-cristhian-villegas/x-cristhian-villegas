@@ -3,17 +3,14 @@
     <div class="about__header" appScrollReveal>
       <p class="about__label">
         <span class="about__label-line"></span>
-        About me
+        {{ 'about.label' | t }}
       </p>
       <h2 class="about__title">
-        Software Engineer &
-        <span class="about__title--accent">Cloud Architect</span>
+        {{ 'about.title' | t }}
+        <span class="about__title--accent">{{ 'about.title.accent' | t }}</span>
       </h2>
       <p class="about__desc">
-        I build production-grade distributed systems and cloud-native
-        applications with clean, maintainable architectures.
-        From robust APIs with Spring Boot to responsive UIs with Angular
-        and infrastructure on AWS with Kubernetes.
+        {{ 'about.desc' | t }}
       </p>
     </div>
 
@@ -24,13 +21,13 @@
             <span class="about__card-icon" [style.color]="item.color">
               {{ item.icon }}
             </span>
-            <h3 class="about__card-title">{{ item.label }}</h3>
+            <h3 class="about__card-title">{{ item.labelKey | t }}</h3>
           </div>
           <ul class="about__card-list">
-            @for (entry of item.items; track trackByItem($index)) {
+            @for (key of item.itemKeys; track trackByItem($index)) {
               <li class="about__card-item">
                 <span class="about__card-dash" [style.color]="item.color">&ndash;</span>
-                {{ entry }}
+                {{ key | t }}
               </li>
             }
           </ul>

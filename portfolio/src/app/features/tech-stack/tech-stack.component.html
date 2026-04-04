@@ -3,11 +3,11 @@
     <div class="stack__header" appScrollReveal>
       <p class="stack__label">
         <span class="stack__label-line"></span>
-        Tech Stack
+        {{ 'stack.label' | t }}
       </p>
       <h2 class="stack__title">
-        Tools I work with
-        <span class="stack__title--accent">daily</span>
+        {{ 'stack.title' | t }}
+        <span class="stack__title--accent">{{ 'stack.title.accent' | t }}</span>
       </h2>
     </div>
 
@@ -16,7 +16,7 @@
         <div class="stack__category" appScrollReveal>
           <div class="stack__category-header">
             <div class="stack__category-dot" [style.background]="category.color"></div>
-            <h3 class="stack__category-name">{{ category.name }}</h3>
+            <h3 class="stack__category-name">{{ category.nameKey | t }}</h3>
           </div>
           <div class="stack__techs">
             @for (tech of category.items; track trackByTech($index, tech)) {

@@ -3,11 +3,11 @@
     <div class="arch__header" appScrollReveal>
       <p class="arch__label">
         <span class="arch__label-line"></span>
-        Architecture
+        {{ 'arch.label' | t }}
       </p>
       <h2 class="arch__title">
-        How I build
-        <span class="arch__title--accent">systems</span>
+        {{ 'arch.title' | t }}
+        <span class="arch__title--accent">{{ 'arch.title.accent' | t }}</span>
       </h2>
     </div>
 
@@ -16,7 +16,7 @@
         <div class="arch__card" appScrollReveal>
           <div class="arch__card-stripe" [style.background]="layer.color"></div>
           <span class="arch__card-number" [style.color]="layer.color">0{{ $index + 1 }}</span>
-          <h3 class="arch__card-name">{{ layer.name }}</h3>
+          <h3 class="arch__card-name">{{ layer.nameKey | t }}</h3>
           <div class="arch__card-techs">
             @for (item of layer.items; track trackByIndex($index)) {
               <span class="arch__card-tech">{{ item }}</span>
@@ -27,7 +27,7 @@
     </div>
 
     <div class="arch__bottom" appScrollReveal>
-      <span class="arch__bottom-label">Built with</span>
+      <span class="arch__bottom-label">{{ 'arch.bottom' | t }}</span>
       <div class="arch__pills">
         @for (p of principles; track trackByIndex($index)) {
           <span class="arch__pill">{{ p }}</span>

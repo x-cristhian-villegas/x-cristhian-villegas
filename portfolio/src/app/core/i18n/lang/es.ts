@@ -107,4 +107,14 @@ export const es: Record<string, string> = {
   // === Footer ===
   'footer.tagline': 'Diseñado y construido por Cristhian Villegas',
   'footer.made': 'Hecho con',
+
+  // === Internal links ===
+  'about.cta': 'Mira lo que he construido',
+  'arch.cta': 'Contáctame',
+
+  // === Page titles & meta ===
+  'page.home.title': 'Cristhian Villegas — Desarrollador Fullstack & Arquitecto Cloud | Java, Angular, AWS',
+  'page.home.description': 'Portafolio de Cristhian Villegas, Desarrollador Fullstack y Arquitecto Cloud. Proyectos con Java, Spring Boot, Angular, TypeScript, AWS, Docker y Kubernetes. Disponible para contratación.',
+  'page.projects.title': 'Proyectos — Cristhian Villegas | Apps en Producción con Java, Angular y AWS',
+  'page.projects.description': 'Aplicaciones en producción construidas por Cristhian Villegas con Java, Spring Boot, Angular, TypeScript, Docker y AWS. REST Client, Motor BPM, Blog y más.',
 };

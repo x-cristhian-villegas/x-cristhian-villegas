@@ -1,4 +1,5 @@
-import { Component, ChangeDetectionStrategy, inject, computed } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ScrollRevealDirective } from '../../shared/animations/scroll.animation';
 import { I18nService } from '../../core/i18n/i18n.service';
 import { TranslatePipe } from '../../core/i18n/translate.pipe';
@@ -13,7 +14,7 @@ interface AboutItem {
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [ScrollRevealDirective, TranslatePipe],
+  imports: [RouterLink, ScrollRevealDirective, TranslatePipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',

@@ -1,7 +1,8 @@
-import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { SeoService } from './core/seo/seo.service';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,8 @@ import { FooterComponent } from './layout/footer/footer.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
+  private _seo = inject(SeoService);
+
   ngOnInit(): void {
     const loader = document.getElementById('app-loader');
     if (loader) {

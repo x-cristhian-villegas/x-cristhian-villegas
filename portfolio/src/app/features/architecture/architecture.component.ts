@@ -65,4 +65,8 @@ export class ArchitectureComponent {
   trackByIndex(index: number): number {
     return index;
   }
+
+  scrollTo(selector: string): void {
+    document.querySelector(selector)?.scrollIntoView({ behavior: 'smooth' });
+  }
 }

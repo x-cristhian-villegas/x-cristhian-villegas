@@ -153,4 +153,26 @@
       background: var(--glass-bg-hover);
     }
   }
+
+  &__cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-2;
+    margin-top: $spacing-6;
+    padding: $spacing-3 $spacing-6;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: var(--accent-green);
+    border: 1px solid var(--accent-green);
+    border-radius: $radius-base;
+    text-decoration: none;
+    cursor: pointer;
+    transition: $transition-base;
+    opacity: 0.7;
+
+    &:hover {
+      opacity: 1;
+      background: var(--glass-bg-hover);
+    }
+  }
 }
